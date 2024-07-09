@@ -602,7 +602,7 @@ public class RNSerialportModule extends ReactContextBaseJavaModule {
 					onErrorEvent,
 					createError(
 						Definitions.ERROR_READING_DATA,
-						Definitions.ERROR_READING_DATA_MESSAGE + " System Message: " + err.getMessage()
+						Definitions.ERROR_READING_DATA_MESSAGE + " System Message: " + exception.getMessage()
 					)
 				);
 			}
