@@ -42,11 +42,6 @@ interface DefinitionsStatic {
 		FLOW_CONTROL_OFF: number;
 		FLOW_CONTROL_RTS_CTS: number;
 		FLOW_CONTROL_DSR_DTR: number;
-		FLOW_CONTROL_XON_XOFF: number;
-	};
-	RETURNED_DATA_TYPES: {
-		INTARRAY: 1;
-		HEXSTRING: 2;
 	};
 	DRIVER_TYPES: {
 		AUTO: string;

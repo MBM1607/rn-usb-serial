@@ -44,9 +44,6 @@ public class Definitions {
 	public static final String ERROR_SERVICE_ALREADY_STARTED_MESSAGE         = "USB service is already started";;
 	public static final String ERROR_SERVICE_ALREADY_STOPPED_MESSAGE         = "USB service is already stopped";;
 
-	public static final int RETURNED_DATA_TYPE_INTARRAY = 1;
-	public static final int RETURNED_DATA_TYPE_HEXSTRING = 2;
-
 	public final static String hexChars = "0123456789ABCDEF";
 	private final static char[] hexArray = hexChars.toCharArray();
 

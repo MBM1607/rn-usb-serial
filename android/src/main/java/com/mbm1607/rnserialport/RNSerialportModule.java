@@ -19,6 +19,7 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.facebook.react.bridge.WritableNativeArray;
 
 import android.util.Base64;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,7 +49,8 @@ public class RNSerialportModule extends ReactContextBaseJavaModule {
 		return "RNSerialport";
 	}
 
-	private final String ACTION_USB_READY = "com.felhr.connectivityservices.USB_READY";
+	private static final String TAG = "RNSerialportModule";
+	private static final String ACTION_USB_READY = "com.felhr.connectivityservices.USB_READY";
 	private final String ACTION_USB_ATTACHED = "android.hardware.usb.action.USB_DEVICE_ATTACHED";
 	private final String ACTION_USB_DETACHED = "android.hardware.usb.action.USB_DEVICE_DETACHED";
 	private final String ACTION_USB_NOT_SUPPORTED = "com.felhr.usbservice.USB_NOT_SUPPORTED";
@@ -93,7 +95,6 @@ public class RNSerialportModule extends ReactContextBaseJavaModule {
 	private String autoConnectDeviceName;
 	private int autoConnectBaudRate = 9600;
 	private int portInterface = -1;
-	private int returnedDataType = Definitions.RETURNED_DATA_TYPE_INTARRAY;
 	private String driver = "AUTO";
 
 
@@ -220,12 +221,6 @@ public class RNSerialportModule extends ReactContextBaseJavaModule {
 	@ReactMethod
 	public void setInterface(int iFace) {
 		this.portInterface = iFace;
-	}
-	@ReactMethod
-	public void setReturnedDataType(int type) {
-		if(type == Definitions.RETURNED_DATA_TYPE_HEXSTRING || type == Definitions.RETURNED_DATA_TYPE_INTARRAY) {
-			this.returnedDataType = type;
-		}
 	}
 
 	@ReactMethod
@@ -596,29 +591,20 @@ public class RNSerialportModule extends ReactContextBaseJavaModule {
 		@Override
 		public void onReceivedData(byte[] bytes) {
 			try {
+				String data = new String(bytes, "UTF-8");
+				Log.i(TAG, "Received Data: " + data);
 
-				String payloadKey = "payload";
+				if (!data.equals("")) eventEmit(onReadDataFromPort, data);
+			} catch (Exception exception) {
+				exception.printStackTrace();
 
-				WritableMap params = Arguments.createMap();
-
-				if(returnedDataType == Definitions.RETURNED_DATA_TYPE_INTARRAY) {
-
-					WritableArray intArray = new WritableNativeArray();
-					for(byte b: bytes) {
-						intArray.pushInt(UnsignedBytes.toInt(b));
-					}
-					params.putArray(payloadKey, intArray);
-
-				} else if(returnedDataType == Definitions.RETURNED_DATA_TYPE_HEXSTRING) {
-					String hexString = Definitions.bytesToHex(bytes);
-					params.putString(payloadKey, hexString);
-				} else
-					return;
-
-				eventEmit(onReadDataFromPort, params);
-
-			} catch (Exception err) {
-				eventEmit(onErrorEvent, createError(Definitions.ERROR_READING_DATA, Definitions.ERROR_READING_DATA_MESSAGE + " System Message: " + err.getMessage()));
+				eventEmit(
+					onErrorEvent,
+					createError(
+						Definitions.ERROR_READING_DATA,
+						Definitions.ERROR_READING_DATA_MESSAGE + " System Message: " + err.getMessage()
+					)
+				);
 			}
 		}
 	};

@@ -27,10 +27,6 @@ const definitions = {
 		FLOW_CONTROL_DSR_DTR: 2,
 		FLOW_CONTROL_XON_XOFF: 3,
 	},
-	RETURNED_DATA_TYPES: {
-		INTARRAY: 1,
-		HEXSTRING: 2,
-	},
 	DRIVER_TYPES: {
 		AUTO: 'AUTO',
 		CDC: 'cdc',

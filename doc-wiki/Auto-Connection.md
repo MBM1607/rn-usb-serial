@@ -3,8 +3,8 @@
 **Import Library and Requirements**
 
 ```javascript
-import { RNSerialport, definitions, actions } from "react-native-serialport";
-import { DeviceEventEmitter } from "react-native";
+import { RNSerialport, definitions, actions } from 'react-native-serialport';
+import { DeviceEventEmitter } from 'react-native';
 ```
 
 **Set Your Callback Methods**
@@ -49,7 +49,6 @@ componentDidMount() {
   //.
   // Set Your Callback Methods in here
   //.
-  RNSerialport.setReturnedDataType(definitions.RETURNED_DATA_TYPES.HEXSTRING);
   RNSerialport.setAutoConnect(true);
   RNSerialport.setAutoConnectBaudRate(9600);
   RNSerialport.startUsbService();
@@ -61,13 +60,13 @@ componentDidMount() {
 
 ```javascript
 componentWillUnmount = async () => {
-  DeviceEventEmitter.removeAllListeners();
-  const isOpen = await RNSerialport.isOpen();
-  if (isOpen) {
-    Alert.alert("isOpen", isOpen);
-    RNSerialport.disconnect();
-  }
-  RNSerialport.stopUsbService();
+	DeviceEventEmitter.removeAllListeners();
+	const isOpen = await RNSerialport.isOpen();
+	if (isOpen) {
+		Alert.alert('isOpen', isOpen);
+		RNSerialport.disconnect();
+	}
+	RNSerialport.stopUsbService();
 };
 ```
 
@@ -78,99 +77,98 @@ _Installation Successfuly_
 ### Full Example
 
 ```javascript
-import { DeviceEventEmitter } from "react-native";
-import { RNSerialport, definitions, actions } from "react-native-serialport";
+import { DeviceEventEmitter } from 'react-native';
+import { RNSerialport, definitions, actions } from 'react-native-serialport';
 
 export default class App extends Component<Props> {
-  componentDidMount() {
-    DeviceEventEmitter.addListener(
-      actions.ON_SERVICE_STARTED,
-      this.onServiceStarted,
-      this
-    );
-    DeviceEventEmitter.addListener(
-      actions.ON_SERVICE_STOPPED,
-      this.onServiceStopped,
-      this
-    );
-    DeviceEventEmitter.addListener(
-      actions.ON_DEVICE_ATTACHED,
-      this.onDeviceAttached,
-      this
-    );
-    DeviceEventEmitter.addListener(
-      actions.ON_DEVICE_DETACHED,
-      this.onDeviceDetached,
-      this
-    );
-    DeviceEventEmitter.addListener(actions.ON_ERROR, this.onError, this);
-    DeviceEventEmitter.addListener(
-      actions.ON_CONNECTED,
-      this.onConnected,
-      this
-    );
-    DeviceEventEmitter.addListener(
-      actions.ON_DISCONNECTED,
-      this.onDisconnected,
-      this
-    );
-    DeviceEventEmitter.addListener(actions.ON_READ_DATA, this.onReadData, this);
-    RNSerialport.setInterface(-1); //default -1
-    RNSerialport.setReturnedDataType(definitions.RETURNED_DATA_TYPES.HEXSTRING); //default INTARRAY
-    RNSerialport.setAutoConnectBaudRate(9600);
-    RNSerialport.setAutoConnect(true); // must be true for auto connect
-    RNSerialport.startUsbService(); //start usb listener
-  }
+	componentDidMount() {
+		DeviceEventEmitter.addListener(
+			actions.ON_SERVICE_STARTED,
+			this.onServiceStarted,
+			this
+		);
+		DeviceEventEmitter.addListener(
+			actions.ON_SERVICE_STOPPED,
+			this.onServiceStopped,
+			this
+		);
+		DeviceEventEmitter.addListener(
+			actions.ON_DEVICE_ATTACHED,
+			this.onDeviceAttached,
+			this
+		);
+		DeviceEventEmitter.addListener(
+			actions.ON_DEVICE_DETACHED,
+			this.onDeviceDetached,
+			this
+		);
+		DeviceEventEmitter.addListener(actions.ON_ERROR, this.onError, this);
+		DeviceEventEmitter.addListener(
+			actions.ON_CONNECTED,
+			this.onConnected,
+			this
+		);
+		DeviceEventEmitter.addListener(
+			actions.ON_DISCONNECTED,
+			this.onDisconnected,
+			this
+		);
+		DeviceEventEmitter.addListener(actions.ON_READ_DATA, this.onReadData, this);
+		RNSerialport.setInterface(-1); //default -1
+		RNSerialport.setAutoConnectBaudRate(9600);
+		RNSerialport.setAutoConnect(true); // must be true for auto connect
+		RNSerialport.startUsbService(); //start usb listener
+	}
 
-  componentWillUnmount = async () => {
-    DeviceEventEmitter.removeAllListeners();
-    RNSerialport.isOpen((isOpen) => {
-      if (isOpen) {
-        RNSerialport.disconnect();
-        RNSerialport.stopUsbService();
-      } else {
-        RNSerialport.stopUsbService();
-      }
-    });
-  };
+	componentWillUnmount = async () => {
+		DeviceEventEmitter.removeAllListeners();
+		RNSerialport.isOpen((isOpen) => {
+			if (isOpen) {
+				RNSerialport.disconnect();
+				RNSerialport.stopUsbService();
+			} else {
+				RNSerialport.stopUsbService();
+			}
+		});
+	};
 
-  /* BEGIN Listener Methods */
+	/* BEGIN Listener Methods */
 
-  onDeviceAttached() {
-    console.log("Device Attached");
-  }
+	onDeviceAttached() {
+		console.log('Device Attached');
+	}
 
-  onDeviceDetached() {
-    console.log("Device Detached");
-  }
+	onDeviceDetached() {
+		console.log('Device Detached');
+	}
 
-  onError(error) {
-    console.log("Code: " + error.errorCode + " Message: " + error.errorMessage);
-  }
+	onError(error) {
+		console.log('Code: ' + error.errorCode + ' Message: ' + error.errorMessage);
+	}
 
-  onConnected() {
-    console.log("Connected");
-  }
+	onConnected() {
+		console.log('Connected');
+	}
 
-  onDisconnected() {
-    console.log("Disconnected");
-  }
+	onDisconnected() {
+		console.log('Disconnected');
+	}
 
-  onServiceStarted(response) {
-    //returns usb status when service started
-    if (response.deviceAttached) {
-      this.onDeviceAttached();
-    }
-  }
+	onServiceStarted(response) {
+		//returns usb status when service started
+		if (response.deviceAttached) {
+			this.onDeviceAttached();
+		}
+	}
 
-  onServiceStopped() {
-    console.log("Service stopped");
-  }
+	onServiceStopped() {
+		console.log('Service stopped');
+	}
 
-  onReadData(data) {
-    console.log(data.payload);
-  }
+	onReadData(data) {
+		console.log(data.payload);
+	}
 
-  /* END Listener Methods */
+	/* END Listener Methods */
 }
 ```

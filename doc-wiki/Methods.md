@@ -55,17 +55,17 @@ No Param
 
 ```javascript
 try {
-  const deviceList = await RNSerialport.getDeviceList();
-  if (deviceList.length > 0) {
-    console.log(deviceList);
-  } else {
-    console.log("Device Not Found");
-  }
+	const deviceList = await RNSerialport.getDeviceList();
+	if (deviceList.length > 0) {
+		console.log(deviceList);
+	} else {
+		console.log('Device Not Found');
+	}
 } catch (err) {
-  Alert.alert(
-    "Error from getDeviceList()",
-    err.errorCode + " " + err.errorMessage
-  );
+	Alert.alert(
+		'Error from getDeviceList()',
+		err.errorCode + ' ' + err.errorMessage
+	);
 }
 ```
 
@@ -83,7 +83,7 @@ Params:
 | baudRate   | number | yes for call |
 
 ```javascript
-RNSerialport.connectDevice("deviceName", 9600);
+RNSerialport.connectDevice('deviceName', 9600);
 ```
 
 ---
@@ -111,26 +111,26 @@ _No param_
 ```javascript
 //1st way
 try {
-  const isOpen = await RNSerialport.isOpen();
+	const isOpen = await RNSerialport.isOpen();
 
-  if (isOpen) console.log("Is open?", "yes");
-  else console.log("Is open?", "no");
+	if (isOpen) console.log('Is open?', 'yes');
+	else console.log('Is open?', 'no');
 } catch (err) {
-  console.log(err);
+	console.log(err);
 }
 
 //2st way
 RNSerialport.isOpen()
-  .then((isOpen) => {
-    if (isOpen) {
-      console.log("Is open?", "yes");
-    } else {
-      console.log("Is oprn?", "no");
-    }
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+	.then((isOpen) => {
+		if (isOpen) {
+			console.log('Is open?', 'yes');
+		} else {
+			console.log('Is oprn?', 'no');
+		}
+	})
+	.catch((err) => {
+		console.log(err);
+	});
 ```
 
 ---
@@ -148,24 +148,24 @@ Params:
 ```javascript
 //1st way
 try {
-  const isSupported = await RNSerialport.isSupported("deviceName");
+	const isSupported = await RNSerialport.isSupported('deviceName');
 
-  if (isSupported) console.log("Is supported?", "yes");
-  else console.log("Is supported?", "no");
+	if (isSupported) console.log('Is supported?', 'yes');
+	else console.log('Is supported?', 'no');
 } catch (err) {}
 
 //2st way
-RNSerialport.isSupported("deviceName")
-  .then((isSupported) => {
-    if (isSupported) {
-      console.log("Is supported?", "yes");
-    } else {
-      console.log("Is supported?", "no");
-    }
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+RNSerialport.isSupported('deviceName')
+	.then((isSupported) => {
+		if (isSupported) {
+			console.log('Is supported?', 'yes');
+		} else {
+			console.log('Is supported?', 'no');
+		}
+	})
+	.catch((err) => {
+		console.log(err);
+	});
 ```
 
 ---
@@ -179,24 +179,24 @@ No param
 ```javascript
 //1st way
 try {
-  const isServiceStarted = await RNSerialport.isServiceStarted();
+	const isServiceStarted = await RNSerialport.isServiceStarted();
 
-  if (isServiceStarted) console.log("Is ServiceStarted?", "yes");
-  else console.log("Is ServiceStarted?", "no");
+	if (isServiceStarted) console.log('Is ServiceStarted?', 'yes');
+	else console.log('Is ServiceStarted?', 'no');
 } catch (err) {}
 
 //2st way
 RNSerialport.isServiceStarted()
-  .then((isServiceStarted) => {
-    if (isServiceStarted) {
-      console.log("Is service started?", "yes");
-    } else {
-      console.log("Is service started?", "no");
-    }
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+	.then((isServiceStarted) => {
+		if (isServiceStarted) {
+			console.log('Is service started?', 'yes');
+		} else {
+			console.log('Is service started?', 'no');
+		}
+	})
+	.catch((err) => {
+		console.log(err);
+	});
 ```
 
 ---
@@ -210,7 +210,7 @@ _Writes data to serial port_
 | data | string | yes for call |
 
 ```javascript
-RNSerialport.writeString("HELLO");
+RNSerialport.writeString('HELLO');
 ```
 
 ---
@@ -224,7 +224,7 @@ _Writes data to serial port_
 | data | string | yes for call |
 
 ```javascript
-RNSerialport.writeBase64("SEVMTE8=");
+RNSerialport.writeBase64('SEVMTE8=');
 ```
 
 ---
@@ -240,38 +240,13 @@ _Writes data to serial port_
 | data | string | yes for call |
 
 ```javascript
-RNSerialport.writeHexString("0F"); // 1 byte
-RNSerialport.writeHexString("FF0F"); // 2 btye
-RNSerialport.writeHexString("48454C4C4F"); // 5 byte
+RNSerialport.writeHexString('0F'); // 1 byte
+RNSerialport.writeHexString('FF0F'); // 2 btye
+RNSerialport.writeHexString('48454C4C4F'); // 5 byte
 
 //The following are not recommended.
-RNSerialport.writeHexString("F");
-RNSerialport.writeHexString("FFF");
-```
-
----
-
-### setReturnedDataType
-
-_Changes the data type in "ON_READ_DATA" event_
-
-> Default: INTARRAY
-
-Params:
-
-| TYPE   | REQUIRED     |
-| ------ | ------------ |
-| number | yes for call |
-
-```javascript
-import { definitions } from "react-native-serialport
-RNSerialport.setReturnedDataType(
-  definitions.RETURNED_DATA_TYPES.HEXSTRING
-)
-// or
-RNSerialport.setReturnedDataType(
-  definitions.RETURNED_DATA_TYPES.INTARRAY
-)
+RNSerialport.writeHexString('F');
+RNSerialport.writeHexString('FFF');
 ```
 
 ---
@@ -385,7 +360,7 @@ Params:
 | number | yes for call |
 
 ```javascript
-import { definitions } from "react-native-serialport";
+import { definitions } from 'react-native-serialport';
 RNSerialport.setStopBit(definitions.STOP_BITS.STOP_BITS_1);
 ```
 
@@ -404,7 +379,7 @@ Params:
 | number | yes for call |
 
 ```javascript
-import { definitions } from "react-native-serialport";
+import { definitions } from 'react-native-serialport';
 RNSerialport.setParity(definitions.PARITIES.PARITY_NONE);
 ```
 
@@ -423,7 +398,7 @@ Params:
 | number | yes for call |
 
 ```javascript
-import { definitions } from "react-native-serialport";
+import { definitions } from 'react-native-serialport';
 RNSerialport.setFlowControl(definitions.FLOW_CONTROLS.FLOW_CONTROL_OFF);
 ```
 
