@@ -1,7 +1,9 @@
-
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.melihyarikkaya.rnserialport">
-    <uses-feature android:name="android.hardware.usb.host"
-        android:required="true"/>
+<manifest
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.mbm1607.rnserialport"
+>
+	<uses-feature
+		android:name="android.hardware.usb.host"
+		android:required="true"
+	/>
 </manifest>
-  

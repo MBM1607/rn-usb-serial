@@ -1,27 +1,27 @@
-[startUsbService](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#startUsbService)  
-[stopUsbService](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#stopUsbService)  
-[getDeviceList](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#getDeviceList)  
-[connectDevice](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#connectDevice)  
-[disconnect](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#disconnect)  
-[isOpen](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#isOpen)  
-[isSupported](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#isSupported)  
-[isServiceStarted](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#isServiceStarted)  
-[writeString](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#writeString)  
-[writeBase64](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#writeBase64)  
-[writeHexString](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#writeHexString)
+[startUsbService](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#startUsbService)
+[stopUsbService](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#stopUsbService)
+[getDeviceList](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#getDeviceList)
+[connectDevice](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#connectDevice)
+[disconnect](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#disconnect)
+[isOpen](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#isOpen)
+[isSupported](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#isSupported)
+[isServiceStarted](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#isServiceStarted)
+[writeString](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#writeString)
+[writeBase64](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#writeBase64)
+[writeHexString](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#writeHexString)
 
 #### Setter Methods
 
-[setReturnedDataType](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#setReturnedDataType)  
-[setDriver](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#setDriver)  
-[setInterface](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#setInterface)  
-[setAutoConnect](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#setAutoConnect)  
-[setAutoConnectBaudRate](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#setAutoConnectBaudRate)  
-[setDataBit](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#setDataBit)  
-[setStopBit](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#setStopBit)  
-[setParity](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#setParity)  
-[setFlowControl](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#setFlowControl)  
-[loadDefaultConnectionSetting](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods/#loadDefaultConnectionSetting)
+[setReturnedDataType](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#setReturnedDataType)
+[setDriver](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#setDriver)
+[setInterface](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#setInterface)
+[setAutoConnect](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#setAutoConnect)
+[setAutoConnectBaudRate](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#setAutoConnectBaudRate)
+[setDataBit](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#setDataBit)
+[setStopBit](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#setStopBit)
+[setParity](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#setParity)
+[setFlowControl](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#setFlowControl)
+[loadDefaultConnectionSetting](https://github.com/mbm1607/react-native-serialport/wiki/Methods/#loadDefaultConnectionSetting)
 
 ### startUsbService
 
@@ -121,14 +121,14 @@ try {
 
 //2st way
 RNSerialport.isOpen()
-  .then(isOpen => {
+  .then((isOpen) => {
     if (isOpen) {
       console.log("Is open?", "yes");
     } else {
       console.log("Is oprn?", "no");
     }
   })
-  .catch(err => {
+  .catch((err) => {
     console.log(err);
   });
 ```
@@ -156,14 +156,14 @@ try {
 
 //2st way
 RNSerialport.isSupported("deviceName")
-  .then(isSupported => {
+  .then((isSupported) => {
     if (isSupported) {
       console.log("Is supported?", "yes");
     } else {
       console.log("Is supported?", "no");
     }
   })
-  .catch(err => {
+  .catch((err) => {
     console.log(err);
   });
 ```
@@ -187,14 +187,14 @@ try {
 
 //2st way
 RNSerialport.isServiceStarted()
-  .then(isServiceStarted => {
+  .then((isServiceStarted) => {
     if (isServiceStarted) {
       console.log("Is service started?", "yes");
     } else {
       console.log("Is service started?", "no");
     }
   })
-  .catch(err => {
+  .catch((err) => {
     console.log(err);
   });
 ```
@@ -433,10 +433,10 @@ RNSerialport.setFlowControl(definitions.FLOW_CONTROLS.FLOW_CONTROL_OFF);
 
 _Loads the default settings_
 
-> Defaults:  
-> DATA_BIT: DATA_BITS_8  
-> STOP_BIT: STOP_BITS_1  
-> PARITY: PARITY_NONE  
+> Defaults:
+> DATA_BIT: DATA_BITS_8
+> STOP_BIT: STOP_BITS_1
+> PARITY: PARITY_NONE
 > FLOW_CONTROL: FLOW_CONTROL_OFF
 
 No Params

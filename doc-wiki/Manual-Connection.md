@@ -70,7 +70,7 @@ componentWillUnmount = async () => {
 
 _Installation Successfuly_
 
-[See for methods](https://github.com/melihyarikkaya/react-native-serialport/wiki/Methods)
+[See for methods](https://github.com/mbm1607/react-native-serialport/wiki/Methods)
 
 ### Full Example
 
@@ -93,7 +93,7 @@ import {
   TouchableOpacity,
   ScrollView,
   Alert,
-  DeviceEventEmitter
+  DeviceEventEmitter,
 } from "react-native";
 import { RNSerialport, definitions, actions } from "react-native-serialport";
 //type Props = {};
@@ -112,7 +112,7 @@ class ManualConnection extends Component {
       selectedDevice: null,
       deviceList: [{ name: "Device Not Found", placeholder: true }],
       sendText: "HELLO",
-      returnedDataType: definitions.RETURNED_DATA_TYPES.HEXSTRING
+      returnedDataType: definitions.RETURNED_DATA_TYPES.HEXSTRING,
     };
 
     this.startUsbListener = this.startUsbListener.bind(this);
@@ -193,7 +193,7 @@ class ManualConnection extends Component {
     this.setState({ usbAttached: false });
     this.setState({ selectedDevice: null });
     this.setState({
-      deviceList: [{ name: "Device Not Found", placeholder: true }]
+      deviceList: [{ name: "Device Not Found", placeholder: true }],
     });
   }
   onConnected() {
@@ -242,7 +242,7 @@ class ManualConnection extends Component {
         this.setState({ deviceList });
       } else {
         this.setState({
-          deviceList: [{ name: "Device Not Found", placeholder: true }]
+          deviceList: [{ name: "Device Not Found", placeholder: true }],
         });
       }
     } catch (err) {
@@ -277,10 +277,10 @@ class ManualConnection extends Component {
     )
       return;
     RNSerialport.isSupported(this.state.selectedDevice.name)
-      .then(status => {
+      .then((status) => {
         alert(status ? "Supported" : "Not Supported");
       })
-      .catch(error => {
+      .catch((error) => {
         alert(JSON.stringify(error));
       });
   }
@@ -302,7 +302,7 @@ class ManualConnection extends Component {
     }
   };
 
-  buttonStyle = status => {
+  buttonStyle = (status) => {
     return status
       ? styles.button
       : Object.assign({}, styles.button, { backgroundColor: "#C0C0C0" });
@@ -342,7 +342,7 @@ class ManualConnection extends Component {
             <Text>Send</Text>
             <TextInput
               style={styles.textInput}
-              onChangeText={text => this.setState({ sendText: text })}
+              onChangeText={(text) => this.setState({ sendText: text })}
               value={this.state.sendText}
               placeholder={"Send Text"}
             />
@@ -374,7 +374,7 @@ class ManualConnection extends Component {
               <Text>Baud Rate</Text>
               <TextInput
                 style={styles.textInput}
-                onChangeText={text => this.setState({ baudRate: text })}
+                onChangeText={(text) => this.setState({ baudRate: text })}
                 value={this.state.baudRate}
                 placeholder={"Baud Rate"}
               />
@@ -383,7 +383,7 @@ class ManualConnection extends Component {
               <Text>Interface</Text>
               <TextInput
                 style={styles.textInput}
-                onChangeText={text => this.setState({ interface: text })}
+                onChangeText={(text) => this.setState({ interface: text })}
                 value={this.state.interface}
                 placeholder={"Interface"}
               />
@@ -430,52 +430,52 @@ class ManualConnection extends Component {
 
 const styles = StyleSheet.create({
   full: {
-    flex: 1
+    flex: 1,
   },
   body: {
-    flex: 1
+    flex: 1,
   },
   container: {
     flex: 1,
     marginTop: 20,
     marginLeft: 16,
-    marginRight: 16
+    marginRight: 16,
   },
   header: {
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
     //alignItems: "center"
   },
   line: {
     display: "flex",
-    flexDirection: "row"
+    flexDirection: "row",
   },
   line2: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   title: {
-    width: 100
+    width: 100,
   },
   value: {
-    marginLeft: 20
+    marginLeft: 20,
   },
   output: {
     marginTop: 10,
     height: 300,
     padding: 10,
     backgroundColor: "#FFFFFF",
-    borderWidth: 1
+    borderWidth: 1,
   },
   inputContainer: {
     marginTop: 10,
-    borderBottomWidth: 2
+    borderBottomWidth: 2,
   },
   textInput: {
     paddingLeft: 10,
     paddingRight: 10,
-    height: 40
+    height: 40,
   },
   button: {
     marginTop: 16,
@@ -486,11 +486,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#147efb",
-    borderRadius: 3
+    borderRadius: 3,
   },
   buttonText: {
-    color: "#FFFFFF"
-  }
+    color: "#FFFFFF",
+  },
 });
 
 export default ManualConnection;
