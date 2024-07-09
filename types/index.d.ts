@@ -45,8 +45,8 @@ interface DefinitionsStatic {
 		FLOW_CONTROL_XON_XOFF: number;
 	};
 	RETURNED_DATA_TYPES: {
-		INTARRAY: number;
-		HEXSTRING: number;
+		INTARRAY: 1;
+		HEXSTRING: 2;
 	};
 	DRIVER_TYPES: {
 		AUTO: string;
