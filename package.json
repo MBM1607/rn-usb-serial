@@ -1,5 +1,5 @@
 {
-	"name": "react-native-serialport",
+	"name": "rn-usb-serial",
 	"version": "1.0.0",
 	"description": "This library is for usb serial port communication on android platforms",
 	"main": "index.js",
@@ -8,8 +8,11 @@
 	},
 	"keywords": [
 		"react-native-serialport",
+		"react-native-usb-serial",
+		"rn-usb-serial",
 		"android serialport",
-		"react native usb serialport communication"
+		"react native usb serialport communication",
+		"expo"
 	],
 	"author": {
 		"email": "muhammadkhan1607@gmail.com",
@@ -22,8 +25,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/mbm1607/react-native-serialport.git"
+		"url": "https://github.com/mbm1607/react-native-usb-serial.git"
 	},
-	"homepage": "https://github.com/mbm1607/react-native-serialport.git",
 	"types": "./types/index.d.ts"
 }

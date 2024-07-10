@@ -3,7 +3,7 @@
 **Import Library and Requirements**
 
 ```javascript
-import { RNSerialport, definitions, actions } from 'react-native-serialport';
+import { RNSerialport, definitions, actions } from 'react-native-usb-serial';
 import { DeviceEventEmitter } from 'react-native';
 ```
 
@@ -72,13 +72,13 @@ componentWillUnmount = async () => {
 
 _Installation Successfuly_
 
-[See for methods](https://github.com/mbm1607/react-native-serialport/wiki/Methods)
+[See for methods](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods)
 
 ### Full Example
 
 ```javascript
 import { DeviceEventEmitter } from 'react-native';
-import { RNSerialport, definitions, actions } from 'react-native-serialport';
+import { RNSerialport, definitions, actions } from 'react-native-usb-serial';
 
 export default class App extends Component<Props> {
 	componentDidMount() {
