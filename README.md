@@ -9,7 +9,7 @@ This fork is intended to update the react native version & gradle dependencies t
 
 ### Documents
 
-1. [Download & Installation](https://github.com/mbm1607/rn-usb-serial/wiki/Download-&-Installation)
+1. [Installation](https://github.com/mbm1607/rn-usb-serial/wiki/Installation)
 2. [Auto Connection](https://github.com/mbm1607/rn-usb-serial/wiki/Auto-Connection)
 3. [Manual Connection](https://github.com/mbm1607/rn-usb-serial/wiki/Manual-Connection)
 4. [Methods](https://github.com/mbm1607/rn-usb-serial/wiki/Methods)
