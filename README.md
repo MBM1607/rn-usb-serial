@@ -1,4 +1,4 @@
-# react-native-usb-serial
+# rn-usb-serial
 
 This library is for usb serial port communication on android platform.
 This module uses the [felHR85/UsbSerial](https://github.com/felHR85/UsbSerial) library.
@@ -9,11 +9,11 @@ This fork is intended to update the react native version & gradle dependencies t
 
 ### Documents
 
-1. [Download & Installation](https://github.com/mbm1607/react-native-usb-serial/wiki/Download-&-Installation)
-2. [Auto Connection](https://github.com/mbm1607/react-native-usb-serial/wiki/Auto-Connection)
-3. [Manual Connection](https://github.com/mbm1607/react-native-usb-serial/wiki/Manual-Connection)
-4. [Methods](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods)
-5. [Error Descriptions](https://github.com/mbm1607/react-native-usb-serial/wiki/Error-Descriptions)
+1. [Download & Installation](https://github.com/mbm1607/rn-usb-serial/wiki/Download-&-Installation)
+2. [Auto Connection](https://github.com/mbm1607/rn-usb-serial/wiki/Auto-Connection)
+3. [Manual Connection](https://github.com/mbm1607/rn-usb-serial/wiki/Manual-Connection)
+4. [Methods](https://github.com/mbm1607/rn-usb-serial/wiki/Methods)
+5. [Error Descriptions](https://github.com/mbm1607/rn-usb-serial/wiki/Error-Descriptions)
 
 ### Use to write data to port
 

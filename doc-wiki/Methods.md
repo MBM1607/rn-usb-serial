@@ -1,27 +1,27 @@
-[startUsbService](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#startUsbService)
-[stopUsbService](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#stopUsbService)
-[getDeviceList](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#getDeviceList)
-[connectDevice](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#connectDevice)
-[disconnect](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#disconnect)
-[isOpen](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#isOpen)
-[isSupported](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#isSupported)
-[isServiceStarted](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#isServiceStarted)
-[writeString](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#writeString)
-[writeBase64](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#writeBase64)
-[writeHexString](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#writeHexString)
+[startUsbService](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#startUsbService)
+[stopUsbService](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#stopUsbService)
+[getDeviceList](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#getDeviceList)
+[connectDevice](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#connectDevice)
+[disconnect](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#disconnect)
+[isOpen](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#isOpen)
+[isSupported](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#isSupported)
+[isServiceStarted](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#isServiceStarted)
+[writeString](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#writeString)
+[writeBase64](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#writeBase64)
+[writeHexString](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#writeHexString)
 
 #### Setter Methods
 
-[setReturnedDataType](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#setReturnedDataType)
-[setDriver](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#setDriver)
-[setInterface](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#setInterface)
-[setAutoConnect](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#setAutoConnect)
-[setAutoConnectBaudRate](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#setAutoConnectBaudRate)
-[setDataBit](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#setDataBit)
-[setStopBit](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#setStopBit)
-[setParity](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#setParity)
-[setFlowControl](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#setFlowControl)
-[loadDefaultConnectionSetting](https://github.com/mbm1607/react-native-usb-serial/wiki/Methods/#loadDefaultConnectionSetting)
+[setReturnedDataType](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#setReturnedDataType)
+[setDriver](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#setDriver)
+[setInterface](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#setInterface)
+[setAutoConnect](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#setAutoConnect)
+[setAutoConnectBaudRate](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#setAutoConnectBaudRate)
+[setDataBit](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#setDataBit)
+[setStopBit](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#setStopBit)
+[setParity](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#setParity)
+[setFlowControl](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#setFlowControl)
+[loadDefaultConnectionSetting](https://github.com/mbm1607/rn-usb-serial/wiki/Methods/#loadDefaultConnectionSetting)
 
 ### startUsbService
 
@@ -266,7 +266,7 @@ Params:
 | string | yes for call |
 
 ```javascript
-import { definitions } from "react-native-usb-serial
+import { definitions } from "rn-usb-serial
 RNSerialport.setDriver(definitions.DRIVER_TYPES.AUTO)
 ```
 
@@ -341,7 +341,7 @@ Params:
 | number | yes for call |
 
 ```javascript
-import { definitions } from "react-native-usb-serial
+import { definitions } from "rn-usb-serial
 RNSerialport.setDataBit(definitions.DATA_BITS.DATA_BITS_8)
 ```
 
@@ -360,7 +360,7 @@ Params:
 | number | yes for call |
 
 ```javascript
-import { definitions } from 'react-native-usb-serial';
+import { definitions } from 'rn-usb-serial';
 RNSerialport.setStopBit(definitions.STOP_BITS.STOP_BITS_1);
 ```
 
@@ -379,7 +379,7 @@ Params:
 | number | yes for call |
 
 ```javascript
-import { definitions } from 'react-native-usb-serial';
+import { definitions } from 'rn-usb-serial';
 RNSerialport.setParity(definitions.PARITIES.PARITY_NONE);
 ```
 
@@ -398,7 +398,7 @@ Params:
 | number | yes for call |
 
 ```javascript
-import { definitions } from 'react-native-usb-serial';
+import { definitions } from 'rn-usb-serial';
 RNSerialport.setFlowControl(definitions.FLOW_CONTROLS.FLOW_CONTROL_OFF);
 ```
 
