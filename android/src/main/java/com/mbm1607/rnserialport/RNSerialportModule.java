@@ -49,6 +49,7 @@ public class RNSerialportModule extends ReactContextBaseJavaModule {
 		return "RNSerialport";
 	}
 
+	private static String READ_END_CHAR = "\r";
 	private static final String TAG = "RNSerialportModule";
 	private static final String ACTION_USB_READY = "com.felhr.connectivityservices.USB_READY";
 	private final String ACTION_USB_ATTACHED = "android.hardware.usb.action.USB_DEVICE_ATTACHED";
@@ -98,6 +99,7 @@ public class RNSerialportModule extends ReactContextBaseJavaModule {
 	private String driver = "AUTO";
 
 
+	private String readData = "";
 	private boolean usbServiceStarted = false;
 
 	private final BroadcastReceiver mUsbReceiver = new BroadcastReceiver() {
@@ -594,7 +596,15 @@ public class RNSerialportModule extends ReactContextBaseJavaModule {
 				String data = new String(bytes, "UTF-8");
 				Log.i(TAG, "Received Data: " + data);
 
-				if (!data.equals("")) eventEmit(onReadDataFromPort, data);
+				readData += data;
+
+				// If data ends with lastChar, send data to RN
+				if (readData.endsWith(READ_END_CHAR)) {
+					eventEmit(onReadDataFromPort, readData);
+
+					// Reset readData, so we can start reading new data
+					readData = "";
+				}
 			} catch (Exception exception) {
 				exception.printStackTrace();
 
