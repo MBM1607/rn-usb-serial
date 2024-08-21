@@ -1,6 +1,6 @@
 {
 	"name": "rn-usb-serial",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "This library is for usb serial port communication on android platforms",
 	"main": "index.js",
 	"scripts": {
