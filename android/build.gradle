@@ -79,10 +79,12 @@ android {
 repositories {
 	mavenCentral()
 	google()
+	jcenter()
+	maven { url "https://jitpack.io" }
 }
 
 dependencies {
 	implementation 'com.google.guava:guava:20.0'
 	implementation 'com.facebook.react:react-native:+'
-	implementation fileTree(dir: 'libs', include: ['usbserial-6.1.0-release.aar'])
+	implementation 'com.github.felHR85:UsbSerial:6.1.0'
 }
