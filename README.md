@@ -28,7 +28,7 @@ RNSerialport.writeHexString('48454C4C4F');
 | KEY                    | VALUE                                    |
 | ---------------------- | ---------------------------------------- |
 | RETURNED DATA TYPE     | INT ARRAY (Options: INTARRAY, HEXSTRING) |
-| BAUND RATE             | 9600                                     |
+| BAUD RATE              | 9600                                     |
 | AUTO CONNECT BAUD RATE | 9600                                     |
 | PORT INTERFACE         | -1                                       |
 | DATA BIT               | 8                                        |
