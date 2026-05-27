@@ -1,8 +1,9 @@
 {
-	"name": "rn-usb-serial-lib",
-	"version": "1.0.2",
+	"name": "@wimetrix/rn-usb-serial",
+	"version": "1.0.0",
 	"description": "This library is for usb serial port communication on android platforms",
 	"main": "index.js",
+	"types": "./types/index.d.ts",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -14,11 +15,6 @@
 		"react native usb serialport communication",
 		"expo"
 	],
-	"author": {
-		"email": "ab.ahmadani990@gmail.com",
-		"name": "Abubakar",
-		"url": "https://github.com/WiMetrixDev"
-	},
 	"license": "MIT",
 	"peerDependencies": {
 		"react-native": "^0.73.6"
@@ -26,6 +22,5 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/WiMetrixDev/rn-usb-serial"
-	},
-	"types": "./types/index.d.ts"
+	}
 }
